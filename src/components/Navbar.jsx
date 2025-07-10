@@ -5,13 +5,15 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   const navItemClass = (path) =>
-    `px-4 py-2 rounded-md hover:bg-violet-200 ${
-      pathname === path ? "bg-violet-300 font-semibold" : ""
+    `px-4 py-2 rounded-md text-gray-100 hover:bg-gray-700 hover:shadow-purple-500/50 hover:shadow-sm transition duration-300 ease-in-out ${
+      pathname === path ? "bg-purple-600 font-semibold" : ""
     }`;
 
   return (
-    <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold text-violet-600">📚 ReadMate</h1>
+    <nav className="bg-gray-900 shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-10">
+      <Link to="/" className="text-xl font-bold text-purple-600 flex items-center">
+        <span className="mr-2"></span> ReadMate
+      </Link>
       <div className="space-x-4">
         <Link to="/" className={navItemClass("/")}>
           Home
